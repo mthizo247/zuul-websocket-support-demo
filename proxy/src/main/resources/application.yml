@@ -1,0 +1,15 @@
+server:
+  port: 7078
+
+zuul:
+   routes:
+    hello:
+      path: /**
+      url: http://localhost:7079
+      customSensitiveHeaders: true
+   ws:
+      brokerages:
+        hello:
+          end-points: /gs-guide-websocket
+          brokers:  /topic
+          destination-prefixes: /app
