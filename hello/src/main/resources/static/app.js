@@ -22,6 +22,10 @@ function connect() {
         stompClient.subscribe('/topic/greetings', function (greeting) {
             showGreeting(JSON.parse(greeting.body).content);
         });
+
+        stompClient.subscribe('/topic/time', function (greeting) {
+            showTime(JSON.parse(greeting.body).content);
+        });
     });
 }
 
@@ -38,10 +42,13 @@ function sendName() {
 }
 
 function showGreeting(message) {
-    //$("#greetings").append("<tr><td>" + message + "</td></tr>");
     console.log(message);
-    //$("#greetings-static").text(message);
-    $("#greetings").html("<tr><td>"+message+"</td></tr>");
+    $("#greetings").html("<tr><td>" + message + "</td></tr>");
+}
+
+function showTime(time) {
+    console.log(time);
+    $("#time").text(time);
 }
 
 $(function () {

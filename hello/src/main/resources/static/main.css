@@ -12,3 +12,8 @@ body {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+
+#time {
+    position: absolute;
+    right: 160px;
+}
