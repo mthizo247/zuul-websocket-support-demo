@@ -1,11 +1,15 @@
 server:
   port: 7078
-
+eureka:
+  client:
+    serviceUrl:
+      defaultZone:  http://localhost:7077/eureka
 zuul:
    routes:
     hello:
       path: /**
-      url: http://localhost:7079
+      #url: http://localhost:7079
+      service-id:  hello
       customSensitiveHeaders: true
    ws:
       brokerages:
